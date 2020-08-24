@@ -1,0 +1,36 @@
+.contents-row{
+    padding:80px 30px 80px 30px ;
+    }
+    
+.guide{
+    opacity: 0.5;
+    }
+    
+.send-form{
+    width:1070px ;
+    border-bottom:2px solid #009966;
+    resize: none;
+    }
+    
+.textarea{
+    resize: none;
+    }
+    
+.send{
+  margin: 40px 20px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.4em 2em;
+  text-decoration: none;
+  background: #009966;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.send {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}

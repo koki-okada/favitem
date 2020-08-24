@@ -1,0 +1,14 @@
+<div class="contents-row">
+    <div class="content-post">
+        <%= simple_format(@blog.text) %>
+            <ul class="content-menu">
+            <% if user_signed_in? && current_user.id == @blog.user_id %>
+                <li class="content-menu-list">
+                    <%= link_to("EDIT","#{blog.id}/edit") %>
+                </li>
+                <li class="content-menu-list">
+                    <%= link_to("DESTROY","#{blog.id}/delete") %>
+                </li>
+            <% end %>
+    </div>
+</div>

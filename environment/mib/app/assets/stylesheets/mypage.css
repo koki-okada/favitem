@@ -1,0 +1,10 @@
+.user-info-box{
+    height: 150px;
+    border: 1px black solid;
+    box-sizing: border-box;
+    margin: 100px 20px 0px 20px;
+}
+
+.user-info{
+    padding: 20px; 
+}

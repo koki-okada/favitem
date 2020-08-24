@@ -1,0 +1,27 @@
+<div class="post-form">
+  <%= form_with model: @content do |f| %>
+      <div class="img-box">
+        <%= f.label :img %><br />
+        <%= f.file_field :img, class: "image" %>
+      </div>
+      <div class="title-box">
+        <div class="title">
+          <%= f.label :タイトル %>
+        </div>
+        <div class="title-area">
+          <%= f.text_field :title, :class => 'title-form' %>
+        </div>
+      </div>
+      <div class="text-box">
+        <div class="new-text">
+          <%= f.label :本文 %>
+        </div>
+        <div class="text-area">
+          <%= f.text_area :text, :class => 'text-form' %>
+        </div>
+      </div>
+      <div class="button">
+        <%= f.submit "投稿する" %>
+      </div>
+  <% end %>
+</div>

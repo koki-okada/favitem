@@ -1,0 +1,16 @@
+<div class="edit-user-info-box">
+    <div class="user-info-chg">
+       <%= form_with model: @user do |f| %>
+           <div class="nickname">
+              <p>ニックネーム：<%= f.text_field :nickname, :class => 'nickname-form' %></p>
+           </div>
+           <div class="height">
+              <p>　　　　身長：<%= f.number_field :height, :class => 'height-form' %></p>
+            </div>
+            <div class="weight">
+              <p>　　　　体重：<%= f.number_field :weight, :class => 'height-form' %></p>
+            </div>
+             <%= f.submit "変更する", :class => 'user-info-button' %>
+      <% end %>
+    </div>
+</div>

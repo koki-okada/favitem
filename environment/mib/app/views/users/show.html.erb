@@ -1,0 +1,55 @@
+<div class="user-info-box">
+    <div class="user-info">
+        <% if @bmi.nil? %>
+            <p><%= @nickname %>さんの身長は<%= @height %>cm、体重は<%= @weight %>kg</p>
+            <p>BMIは<%= @bmi %>です</p>
+            <% if @bmi >= 25%>
+                <p>肥満です。適度な運動と健康的な食事を心がけましょう</p>
+            <% elsif @bmi.between?(23.1, 24.9)  %>
+                <p>適正体重です。適度な運動を心がけ、健康を維持しましょう！</p>
+            <% elsif @bmi.between?(22, 23)  %>
+                <p>理想的な体重です！この調子で規則正しい生活を心掛けましょう！</p>
+             <% elsif @bmi.between?(18, 21.9)  %>
+                <p>適正体重です。適度な運動を心がけ、健康を維持しましょう！</p>
+            <% elsif @bmi.between?(1, 17.9)  %>
+                <p>痩せすぎです。1日3食と筋トレで体重を増やしましょう</p>
+            <% end %>
+            <br>
+            <a href="/users/<%= current_user.id %>/edit">プロフィールを変更する</a></li>
+        <% else %>
+            <p>プロフィールを入力して一緒に筋トレをがんばる仲間を作ろう！</p>
+            <a href="/users/new">プロフィールを登録する</a></li>
+        <% end %>
+    </div>
+</div>
+<div class="mypage-contents-row">
+  <% @contents.each do |content| %>
+         <div class="content">
+             <div class="post">
+             <% if content.img? %>
+                <div class="post-img">
+                    <%= image_tag content.img.url %>
+                </div>
+            <% end %>
+                <div class="post-box">
+                    <div class="day">
+                        <td><%= l content.created_at %></td>
+                    </div>
+                    <div class="post-title">
+                        <%= simple_format(content.title) %>
+                    </div>
+                    <div class="text">
+                        <%= simple_format(content.text) %>
+                    </div>
+                    <div class="menu-box">
+                    <ul>
+                        <li class="menu-list"><%= link_to 'SHOW', "/contents/#{content.id}", class:"menu" %></li>
+                        <li class="menu-list"><%= link_to 'EDIT', "/contents/#{content.id}/edit", class:"menu" %></li>
+                        <li class="menu-list"><%= link_to 'DELETE', "/contents/#{content.id}", method: :delete, class:"menu" %></li>
+                    </ul>
+                  </div>
+               </div> 
+             </div>
+         </div>
+    <% end %>
+</div>

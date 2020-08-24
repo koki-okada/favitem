@@ -1,0 +1,40 @@
+<div class="user-info-box">
+    <div class="user-info">
+        <p><%= @nickname %>さんの身長は178cm、体重は70kg</p>
+        <p>BMIは22です</p>
+        <p>理想のBMIです！この調子で規則正しい生活を続けましょう！</p>
+    </div>
+</div>
+
+
+
+<div class="mypage-contents-row">
+    <% @contents.each do |content| %>
+         <div class="content">
+             <div class="post">
+                <div class="post-img">
+                    写真をここに貼る
+                </div>
+                <div class="post-box">
+                    <div class="day">
+                        <td><%= l content.created_at %></td>
+                    </div>
+                    <div class="post-title">
+                        <%= simple_format(content.title) %>
+                    </div>
+                    <div class="text">
+                        <%= simple_format(content.text) %>
+                    </div>
+                </div>
+            </div> 
+            <div class="menu-box">
+            <ul>
+                <li class="menu-list"><%= link_to 'SHOW', "/contents/#{content.id}", class:"menu" %></li>
+                <li class="menu-list"><%= link_to 'EDIT', "/contents/#{content.id}/edit", class:"menu" %></li>
+                <li class="menu-list"><%= link_to 'DELETE', "/contents/#{content.id}", method: :delete, class:"menu" %></li>
+            </ul>
+          </div>
+         </div>
+         
+    <% end %>
+</div>

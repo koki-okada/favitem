@@ -1,0 +1,49 @@
+<div class="contents-row">
+      <div class="content">
+             <div class="post">
+             <% if @content.img? %>
+                <div class="post-img">
+                    <%= image_tag @content.img.url %>
+                </div>
+            <% end %>
+                <div class="post-box">
+                    <div class="day">
+                        <td><%= l @content.created_at %></td>
+                    </div>
+                    <div class="post-title">
+                        <%= simple_format(@content.title) %>
+                    </div>
+                    <div class="text">
+                        <%= simple_format(@content.text) %>
+                    </div>
+                    <div class="menu-box">
+                    <ul>
+                        <li class="menu-list"><%= link_to 'SHOW', "/@contentts/#{@content.id}", class:"menu" %></li>
+                        <li class="menu-list"><%= link_to 'EDIT', "/@contentts/#{@content.id}/edit", class:"menu" %></li>
+                        <li class="menu-list"><%= link_to 'DELETE', "/@contentts/#{@content.id}", method: :delete, class:"menu" %></li>
+                    </ul>
+                  </div>
+               </div> 
+             </div>
+         </div>
+     <div class="comment-form">
+         <% if current_user %>
+             <%= form_with model: @comment do |f| %>
+                <div class="comment-textarea">
+                    <textarea name="text" placeholder="コメント" rows="3" cols="40"></textarea>
+                </div>
+                <div class="submit-button">
+                    <%= f.submit "SENT" %>
+                </div>
+            <% end %>
+        <% else %>
+            <div class="not-signin">
+                <p>コメントの投稿をするにはログインしてください</p>
+                <ui>
+                    <li><%= link_to "ログイン", new_user_session_path %></li>
+                    <li><%= link_to "新規登録", new_user_registration_path %></li>
+                </ui>
+            </div>
+        <% end %>
+     </div>
+</div>

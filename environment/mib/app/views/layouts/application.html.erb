@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mib</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header">
+        <h1 class="header-logo">
+          <a href="/">MIB</a>
+        </h1>
+        <% if user_signed_in? %>
+          <ui id="nav">
+            <li><%= link_to "New", "/contents/new" %></li>
+            <li><a href="/users/<%= current_user.id %>">MyPage</a></li>
+            <li><%= link_to "SignOut", destroy_user_session_path, method: :delete %></li>
+          </ui>
+        <% else %>
+          <ui id="nav">
+            <li><%= link_to "SignIn", new_user_session_path %></li>
+            <li><%= link_to "SignUp", new_user_registration_path %></li>
+          </ui>
+        <% end %>
+        </div>
+        
+    </header>
+    <%= yield %>
+  </body>
+</html>

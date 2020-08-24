@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favitem</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+   <div id="top" class="big-bg">
+            <header class="page-header wrapper">
+            <!--ここにロゴをいれる-->
+                <h2  class="logo"><a href="/">Favitem</a></h2>
+                <nav>
+                <!--ログインしているときとログアウトしていないときで表示を変える-->
+                    <ul class="main-nav">
+                        <li><a href="items/new">New</a></li>
+                        <li><a href="mypageのリンク">Mypage</a></li>
+                        <li><a href="SignOut">SignOut</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <div class="top-content wrapper">
+            <h2 class="page-title">Favitem</h2>
+            <p class="sub-title">
+                あなたの自慢の愛用品をシェアしよう
+            </p>
+        </div><!-- /.top-content -->
+    </div><!-- /#top -->
+          <%= yield %>
+  </div>
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2020 Favitem</small></p>
+            </div>
+        </footer>
+  </body>
+</html>

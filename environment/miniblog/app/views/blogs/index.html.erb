@@ -1,0 +1,20 @@
+<div class="contents-row">
+    <% @blogs.each do |blog| %>
+        <div class="content-post">
+            <%= simple_format(blog.text) %>
+            <ul class="content-menu">
+                <li class="content-menu-list">
+                    <%= link_to("SHOW","#{blog.id}/show") %>
+            <% if user_signed_in? && current_user.id == blog.user_id %>
+                </li>
+                <li class="content-menu-list">
+                      <%= link_to("EDIT","#{blog.id}/edit") %>
+                </li>
+                <li class="content-menu-list">
+                    <%= link_to("DESTROY","#{blog.id}/delete") %>
+                </li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>

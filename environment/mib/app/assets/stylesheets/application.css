@@ -1,0 +1,243 @@
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+.header {
+  height: 65px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222222;
+  position: fixed;
+  margin-top: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-logo {
+   margin-top: 0px;
+   margin: 50px;
+   padding-top: 38px;
+   height: 65px ;
+}
+
+
+.header-logo a{
+    text-decoration: none;
+    color: #999999;
+}
+
+.header-logo a:hover{
+    color: #FFF;
+}
+
+
+#nav {
+  list-style: none;
+  display: flex;
+}
+ 
+#nav li {
+  width: 140px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+}
+
+#nav li :hover {
+    color: #FFF;
+    }
+ 
+#nav li a {
+  text-decoration: none;
+  color: #999999;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/*.contents-row{*/
+/*    box-sizing: border-box;*/
+/*  　display: flex;*/
+/*}*/
+
+.contents-row{
+  width: 300px;
+  box-sizing: border-box;
+  margin-top: 90px;
+  margin-left: 20px;
+}
+
+.content{
+  width: 800px;
+  height: 250px;
+  padding: 20px;
+  border: 1px black solid;
+  margin: 0px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #F1F1F3;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+.post{
+  width: 700px;
+  height: 200px;
+  display: flex;
+
+}
+
+.post-img{
+  height: 200px;
+  width: 300px;
+  margin: 0px;
+  padding: 20px 20px;
+}
+
+.post-box{
+  height: 260px;
+  width: 400px;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 50px;
+}
+
+.post-title{
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.day{
+  width: 400px;
+  height: 20px;
+  font-weight: lighter;
+  font-size: 10px;
+  color: gray;
+}
+
+.text{
+  height: 80px;  
+}
+
+.menu-box{
+  display: flex;
+  height: 50px;
+  width: 450px;
+  margin-top: 80px;
+}
+
+.menu-box li{
+  float: left;
+  display: inline-block;
+}
+
+.menu-list{
+  width: 60px;
+  list-style: none;
+  margin-right:3px;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  background: #222222;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  text-align: center;
+}
+.menu {
+  text-decoration: none;
+  color: #999999; 
+}
+
+li :hover {
+  color: #FFF;
+}
+
+.post-form{
+  height: 430px;
+  width: 500px;
+  box-sizing: border-box;
+  margin-top: 90px;
+  margin-left: 30px;
+  border: 1px black solid;
+  padding: 20px;
+}
+
+.edit-not-signin{
+  padding:20px;  
+}
+
+.title-box{
+  height: 50px;
+  width:200px;
+  margin: 0px;
+  padding: 20px 0px;
+}
+
+.text-box{
+  height: 180px;
+  width: 300px;
+  padding: 20px 0px;
+}
+
+.title-form{
+    border: 2px solid #0a0;  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+    padding: 0.5em;          /* 内側の余白量 */
+    background-color: snow;  /* 背景色 */
+    width: 24.5em;             /* 横幅 */
+    height: 20px;           /* 高さ */
+    font-size: 1em;          /* 文字サイズ */
+    line-height: 1.2;        /* 行の高さ */  
+}
+
+.text-form {
+    border: 2px solid #0a0;  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+    padding: 0.5em;          /* 内側の余白量 */
+    background-color: snow;  /* 背景色 */
+    width: 30em;             /* 横幅 */
+    height: 120px;           /* 高さ */
+    font-size: 1em;          /* 文字サイズ */
+    line-height: 1.2;        /* 行の高さ */
+}
+
+.button {
+  padding: 0.5em;          /* 内側の余白量 */
+　transition: 0.2s;
+　transform: translateY(2px);
+　border: 2px solid #0a0;  /* 枠線 */
+  border-radius: 0.67em; 
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.mypage-contents-row{
+  width: 300px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.comment-form{
+  width: 600px;
+  height: 150px;
+  padding: 20px;
+  margin: 0px;
+  margin-bottom: 30px;
+  list-style: none;
+  }
+  
+.not-signin{
+  width: 600px;
+  height: 150px;
+  list-style: none;
+}
+
+.new-text{
+  height: 30px;
+}

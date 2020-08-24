@@ -1,0 +1,22 @@
+<div class="post-item-wrapper">
+    <%= form_with model: @item do |f| %>
+        <div class="post-message post-ele">
+            <h2>新規投稿</h2>
+        </div>
+        <div class="post-img post-ele">
+            <%= f.label :img, "画像をアップロード"  %>
+            <%= f.file_field :img, class: "post-img-btn" %>
+        </div>
+        <div class="post-product-name post-ele">
+            <%= f.label :name, 'お気に入りのモノの名前' %><br />
+            <%= f.text_field :name, class: "post-name" %>
+        </div>
+        <div class="post-product-text post-ele">
+            <%= f.label :text, 'お気に入りポイント' %><br />
+            <%= f.text_area :text, class: "post-text", rows: "5" %>
+        </div>
+        <div class="btn post-ele">
+            <%= f.submit '投稿', class: 'post-btn' %>
+        </div>
+    <% end %>
+</div>

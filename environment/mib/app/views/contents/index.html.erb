@@ -1,0 +1,31 @@
+<div class="contents-row">
+    <% @contents.each do |content| %>
+         <div class="content">
+             <div class="post">
+             <% if content.img? %>
+                <div class="post-img">
+                    <%= image_tag content.img.url %>
+                </div>
+            <% end %>
+                <div class="post-box">
+                    <div class="day">
+                        <td><%= l content.created_at %></td>
+                    </div>
+                    <div class="post-title">
+                        <%= simple_format(content.title) %>
+                    </div>
+                    <div class="text">
+                        <%= simple_format(content.text) %>
+                    </div>
+                    <div class="menu-box">
+                    <ul>
+                        <li class="menu-list"><%= link_to 'SHOW', "/contents/#{content.id}", class:"menu" %></li>
+                        <li class="menu-list"><%= link_to 'EDIT', "/contents/#{content.id}/edit", class:"menu" %></li>
+                        <li class="menu-list"><%= link_to 'DELETE', "/contents/#{content.id}", method: :delete, class:"menu" %></li>
+                    </ul>
+                  </div>
+               </div> 
+             </div>
+         </div>
+    <% end %>
+</div>
